@@ -4,10 +4,38 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class PointDTO {
+    private String autoId;
     private double lat;
     private double lon;
-    private String autoId;
+    private double azimuth;
+    private int speed;
     private long time;
+
+    public PointDTO(String autoId,
+            double lat,
+            double lon,
+            double azimuth,
+            int speed,
+            long time) {
+        this.autoId=autoId;
+        this.lat=lat;
+        this.lon=lon;
+        this.azimuth=azimuth;
+        this.speed=speed;
+        this.time=time;
+    }
+
+    public PointDTO(){
+
+    }
+
+    public String getAutoId() {
+        return autoId;
+    }
+
+    public void setAutoId(String autoId) {
+        this.autoId = autoId;
+    }
 
     public double getLat() {
         return lat;
@@ -25,33 +53,32 @@ public class PointDTO {
         this.lon = lon;
     }
 
-    public String getAutoId() {
-        return autoId;
+    public double getAzimuth() {
+        return azimuth;
     }
 
-    public void setAutoId(String autoId) {
-        this.autoId = autoId;
+    public void setAzimuth(double azimuth) {
+        this.azimuth = azimuth;
     }
 
-    public String toJson() throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.writeValueAsString(this);
+    public int getSpeed() {
+        return speed;
     }
 
-    @Override
-    public String toString() {
-        return "PointDTO{" +
-                "lat=" + lat +
-                ", lon=" + lon +
-                ", autoId='" + autoId + '\'' +
-                '}';
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public long getTime() {
+        return time;
     }
 
     public void setTime(long time) {
         this.time = time;
     }
 
-    public long getTime() {
-        return time;
+    public String toJson() throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.writeValueAsString(this);
     }
 }
