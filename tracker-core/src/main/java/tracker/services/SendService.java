@@ -5,19 +5,20 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 
 @Service
-public class ScheduledSendService {
+public class SendService {
 
-    private static final Logger log = LoggerFactory.getLogger(ScheduledSendService.class);
+    private static final Logger log = LoggerFactory.getLogger(SendService.class);
 
     @Autowired
-    private ScheduledStorageService scheduledStorageService;
+    private StorageService storageService;
 
     @Scheduled(fixedRateString = "${sendingPeriod.prop}", initialDelayString = "${initialDelay.prop}")
     public void takeAll() throws InterruptedException {
-        send(scheduledStorageService.takeAll());
+        send(storageService.takeAll());
     }
 
     public void send(ArrayList<String> points) {

@@ -12,20 +12,20 @@ public class PointDTO {
     private long time;
 
     public PointDTO(String autoId,
-            double lat,
-            double lon,
-            double azimuth,
-            int speed,
-            long time) {
-        this.autoId=autoId;
-        this.lat=lat;
-        this.lon=lon;
-        this.azimuth=azimuth;
-        this.speed=speed;
-        this.time=time;
+                    double lat,
+                    double lon,
+                    double azimuth,
+                    int speed,
+                    long time) {
+        this.autoId = autoId;
+        this.lat = lat;
+        this.lon = lon;
+        this.azimuth = azimuth;
+        this.speed = speed;
+        this.time = time;
     }
 
-    public PointDTO(){
+    public PointDTO() {
 
     }
 

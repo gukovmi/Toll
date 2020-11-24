@@ -4,13 +4,14 @@ import dto.PointDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+
 import java.util.Random;
 
 @Service
-public class ScheduledGPSService {
+public class GPSService {
 
     @Autowired
-    private ScheduledStorageService scheduledStorageService;
+    private StorageService storageService;
 
     @Scheduled(fixedRateString = "${gettingPeriod.prop}")
     public void getPoint() throws Exception {
@@ -25,6 +26,6 @@ public class ScheduledGPSService {
     }
 
     void sendPoint(PointDTO point) throws Exception {
-        scheduledStorageService.put(point.toJson());
+        storageService.put(point.toJson());
     }
 }
