@@ -1,4 +1,4 @@
-package dto;
+package models;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;

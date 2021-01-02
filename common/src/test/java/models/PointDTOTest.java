@@ -1,10 +1,11 @@
-package dto;
+package models;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
 
 public class PointDTOTest {
     private final String autoId = "o567gfd";
@@ -37,4 +38,3 @@ public class PointDTOTest {
         assertEquals(1605953046374L, dto.getTime());
     }
 }
-

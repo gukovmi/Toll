@@ -1,6 +1,6 @@
 package tracker.services;
 
-import dto.PointDTO;
+import models.PointDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,6 @@ public class GPSService {
 
     @Autowired
     private StorageService storageService;
-
     @Scheduled(fixedRateString = "${gettingPeriod.prop}")
     public void getPoint() throws Exception {
         PointDTO point = new PointDTO(
